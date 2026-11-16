@@ -352,23 +352,42 @@
           <p>Запитай про фітнес-кемп у Карпатах, цифровий детокс або інструменти для розрахунку КБЖУ та меню.</p>
           <div class="contact-aside"><span aria-hidden="true">↗</span><p>Без зобов’язань бронювати місце — спершу можна просто поставити запитання.</p></div>
         </div>
-        <form id="contact-form" class="contact-form" aria-describedby="contact-status">
-          <div class="field">
-            <label for="contact-name">Ім’я</label>
-            <input id="contact-name" name="name" type="text" autocomplete="name" placeholder="Як до тебе звертатись?" required>
+        <form id="contact-form" class="contact-form mx-auto grid w-full max-w-2xl gap-5 rounded-3xl bg-surface p-4 text-ink shadow-xl sm:p-6" aria-describedby="contact-status" novalidate>
+          <div class="field grid gap-2">
+            <label class="text-sm font-semibold text-ink" for="contact-name">Ім’я</label>
+            <input class="peer min-h-12 w-full rounded-lg border border-slate-300 bg-surface px-3 py-3 text-sm text-ink transition-colors duration-200 hover:border-primary focus-visible:border-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/30 aria-[invalid=true]:border-red-600 aria-[invalid=true]:hover:border-red-600 aria-[invalid=true]:focus-visible:border-red-600 aria-[invalid=true]:focus-visible:ring-red-300 aria-[invalid=false]:border-primary aria-[invalid=false]:hover:border-primary aria-[invalid=false]:focus-visible:border-primary aria-[invalid=false]:focus-visible:ring-primary/30" id="contact-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="80" required>
+            <p id="contact-name-error" class="m-0 hidden text-sm text-red-700 peer-aria-[invalid=true]:block" aria-live="polite">Введіть ім’я (від 2 до 80 символів).</p>
+            <p id="contact-name-success" class="m-0 hidden items-center gap-1 text-sm text-green-700 peer-aria-[invalid=false]:flex" aria-live="polite"><span aria-hidden="true">✓</span> Ім’я введено коректно.</p>
           </div>
-          <div class="grid gap-4 sm:grid-cols-2">
-            <div class="field">
-              <label for="contact-phone">Телефон</label>
-              <input id="contact-phone" name="phone" type="tel" autocomplete="tel" placeholder="+380" required>
+          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div class="field grid gap-2">
+              <label class="text-sm font-semibold text-ink" for="contact-email">Email</label>
+              <input class="peer min-h-12 w-full rounded-lg border border-slate-300 bg-surface px-3 py-3 text-sm text-ink transition-colors duration-200 hover:border-primary focus-visible:border-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/30 aria-[invalid=true]:border-red-600 aria-[invalid=true]:hover:border-red-600 aria-[invalid=true]:focus-visible:border-red-600 aria-[invalid=true]:focus-visible:ring-red-300 aria-[invalid=false]:border-primary aria-[invalid=false]:hover:border-primary aria-[invalid=false]:focus-visible:border-primary aria-[invalid=false]:focus-visible:ring-primary/30" id="contact-email" name="email" type="email" autocomplete="email" required>
+              <p id="contact-email-error" class="m-0 hidden text-sm text-red-700 peer-aria-[invalid=true]:block" aria-live="polite">Введіть коректну адресу електронної пошти.</p>
+              <p id="contact-email-success" class="m-0 hidden items-center gap-1 text-sm text-green-700 peer-aria-[invalid=false]:flex" aria-live="polite"><span aria-hidden="true">✓</span> Електронну адресу введено коректно.</p>
             </div>
-            <div class="field">
-              <label for="contact-email">Email</label>
-              <input id="contact-email" name="email" type="email" autocomplete="email" placeholder="name@example.com">
+            <div class="field grid gap-2">
+              <label class="text-sm font-semibold text-ink" for="contact-phone">Телефон</label>
+              <input class="peer min-h-12 w-full rounded-lg border border-slate-300 bg-surface px-3 py-3 text-sm text-ink transition-colors duration-200 hover:border-primary focus-visible:border-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/30 aria-[invalid=true]:border-red-600 aria-[invalid=true]:hover:border-red-600 aria-[invalid=true]:focus-visible:border-red-600 aria-[invalid=true]:focus-visible:ring-red-300 aria-[invalid=false]:border-primary aria-[invalid=false]:hover:border-primary aria-[invalid=false]:focus-visible:border-primary aria-[invalid=false]:focus-visible:ring-primary/30" id="contact-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" pattern="\+380\d{9}" required>
+              <p id="contact-phone-error" class="m-0 hidden text-sm text-red-700 peer-aria-[invalid=true]:block" aria-live="polite">Введіть номер у форматі +380XXXXXXXXX: після +380 має бути рівно 9 цифр, без пробілів чи інших символів.</p>
+              <p id="contact-phone-success" class="m-0 hidden items-center gap-1 text-sm text-green-700 peer-aria-[invalid=false]:flex" aria-live="polite"><span aria-hidden="true">✓</span> Номер телефону введено коректно.</p>
             </div>
           </div>
-          <label class="consent-row"><input type="checkbox" name="consent" required><span>Погоджуюсь на обробку контактних даних для відповіді на запит.</span></label>
-          <button class="button button-primary w-full transition-all duration-200 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2" type="submit">Записатись на консультацію <span aria-hidden="true">→</span></button>
+          <div class="field grid gap-2">
+            <label class="text-sm font-semibold text-ink" for="contact-message">Повідомлення</label>
+            <textarea class="peer min-h-32 w-full resize-y rounded-lg border border-slate-300 bg-surface px-3 py-3 text-sm leading-6 text-ink transition-colors duration-200 hover:border-primary focus-visible:border-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/30 aria-[invalid=true]:border-red-600 aria-[invalid=true]:hover:border-red-600 aria-[invalid=true]:focus-visible:border-red-600 aria-[invalid=true]:focus-visible:ring-red-300 aria-[invalid=false]:border-primary aria-[invalid=false]:hover:border-primary aria-[invalid=false]:focus-visible:border-primary aria-[invalid=false]:focus-visible:ring-primary/30" id="contact-message" name="message" rows="5" minlength="10" maxlength="2000" required></textarea>
+            <p id="contact-message-error" class="m-0 hidden text-sm text-red-700 peer-aria-[invalid=true]:block" aria-live="polite">Повідомлення має містити від 10 до 2000 символів.</p>
+            <p id="contact-message-success" class="m-0 hidden items-center gap-1 text-sm text-green-700 peer-aria-[invalid=false]:flex" aria-live="polite"><span aria-hidden="true">✓</span> Повідомлення готове до надсилання.</p>
+          </div>
+          <div class="field grid gap-2 group">
+            <div class="flex items-start gap-3 text-sm leading-6 text-muted">
+              <input class="peer mt-1 h-5 w-5 shrink-0 accent-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 aria-[invalid=true]:ring-2 aria-[invalid=true]:ring-red-500 aria-[invalid=true]:focus-visible:ring-red-500 aria-[invalid=false]:ring-2 aria-[invalid=false]:ring-primary aria-[invalid=false]:focus-visible:ring-primary" id="contact-consent" type="checkbox" name="consent" required>
+              <label class="cursor-pointer" for="contact-consent">Погоджуюсь на обробку контактних даних для відповіді на запит і приймаю <a class="font-medium text-primary underline underline-offset-2 transition-colors hover:text-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" href="#privacy">політику конфіденційності</a>.</label>
+            </div>
+            <p id="contact-consent-error" class="m-0 hidden text-sm text-red-700 group-has-[input[aria-invalid=true]]:block" aria-live="polite">Підтвердьте згоду на обробку персональних даних.</p>
+            <p id="contact-consent-success" class="m-0 hidden items-center gap-1 text-sm text-green-700 group-has-[input[aria-invalid=false]]:flex" aria-live="polite"><span aria-hidden="true">✓</span> Згоду підтверджено.</p>
+          </div>
+          <button class="button button-primary min-h-12 w-full rounded-lg px-6 py-3 text-sm transition-all duration-200 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2" type="submit">Надіслати</button>
           <p id="contact-status" class="contact-status" role="status">Демо-форма: сервіс надсилання ще не підключений. Дані нікуди не передаються.</p>
         </form>
         <figure class="contact-map">
@@ -419,12 +438,21 @@
     </div>
   </footer>
 
+  <div id="success-modal" class="fixed inset-0 z-[100] hidden items-center justify-center overflow-y-auto bg-ink/60 p-4" aria-hidden="true">
+    <section class="relative my-auto w-full max-w-md rounded-3xl bg-surface p-6 text-center text-ink shadow-2xl sm:p-8" role="dialog" aria-modal="true" aria-labelledby="success-modal-title" aria-describedby="success-modal-description success-modal-note" tabindex="-1">
+      <button class="absolute right-3 top-3 inline-flex h-11 w-11 items-center justify-center rounded-full text-2xl text-muted transition-colors hover:bg-background hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary" type="button" aria-label="Закрити повідомлення" data-close-success-modal>×</button>
+      <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-3xl font-semibold text-primary" aria-hidden="true">✓</div>
+      <h2 id="success-modal-title" class="mt-5 text-2xl font-semibold">Дякуємо!</h2>
+      <p id="success-modal-description" class="mt-3 text-base leading-7">Ваше повідомлення успішно надіслано.</p>
+      <p id="success-modal-note" class="mt-3 text-sm leading-6 text-muted">Це демонстраційне підтвердження: сервер не підключений і дані не передавалися.</p>
+      <button class="button button-primary mt-6 min-h-12 w-full rounded-lg px-6 py-3 text-sm transition-all duration-200 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2" type="button" data-close-success-modal>Закрити</button>
+    </section>
+  </div>
+
   <script>
     (() => {
       const calculatorForm = document.querySelector("#calculator-form");
       const result = document.querySelector("#calculator-result");
-      const contactForm = document.querySelector("#contact-form");
-      const contactStatus = document.querySelector("#contact-status");
       const mobileMenu = document.querySelector(".mobile-menu");
 
       mobileMenu.querySelectorAll("a").forEach((link) => {
@@ -471,13 +499,8 @@
         calculatorForm.querySelector("button[type='submit']").focus();
       });
 
-      contactForm.addEventListener("submit", (event) => {
-        event.preventDefault();
-        if (!contactForm.reportValidity()) return;
-        contactStatus.textContent = "Ця демонстраційна форма ще не підключена до сервісу надсилання. Ваші дані нікуди не відправлено.";
-        contactStatus.classList.add("contact-status-warning");
-      });
     })();
   </script>
+  <script src="assets/js/validation.js"></script>
 </body>
 </html>
